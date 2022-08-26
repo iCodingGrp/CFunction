@@ -62,3 +62,15 @@ template<class XType,class YType>class crdinate{			//用于构建坐标系
 		inline bool operator>=(const crdinate __anthr){return (this->__Xpos>=__anthr.__Xpos && this->__Ypos>=__anthr.__Ypos);}
 		inline XType operator[](int __get){if(__get>2 || __get<0) return 0;if(__get==0) return this->__Xpos;else return this->__Ypos;}
 };
+
+class counter{
+	private:
+		unsigned long long __inCounterr;
+	public:
+		counter(){this->__inCounterr=0;}
+		inline void counter_reset(void){this->__inCounterr=0;}	//重置计数器为0 
+		inline void counter_startAt(unsigned long long __startAt){this->__inCounterr=__startAt;}		//设置计数器为输入的数 
+		inline void counter_plus(void){this->__inCounterr++;}	//将计数器加一
+		inline void counter_plus_step(int __step){this->__inCounterr+=__step;}	//将计数器加Step 
+		inline unsigned long long get_counter(void){return this->__inCounterr;}	//获取计数器累加的值
+};
